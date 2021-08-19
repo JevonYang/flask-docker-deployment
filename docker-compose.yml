@@ -1,0 +1,24 @@
+version: "3.3"
+services:
+  nginx:
+    restart: always
+    image: nginx
+    privileged: true
+    volumes:
+        - ./api.conf:/etc/nginx/conf.d/default.conf
+    ports:
+        - "80:80"
+    links:
+        - api
+
+  api:
+    image: flask
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes: 
+        - ./:/data/Project/web_statistics
+    restart: always
+    # ports:
+    #   - "8000:8000"
+
