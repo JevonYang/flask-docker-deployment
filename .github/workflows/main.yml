@@ -4,7 +4,7 @@ name: CI
 
 env:
   # Use docker.io for Docker Hub if empty
-  REGISTRY: ${{DOCKER_REGISTERY}}
+  REGISTRY: ${{secrets.DOCKER_REGISTERY}}
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ env.REGISTRY }}/${{ github.actor }}/${{ github.repository }}
 
