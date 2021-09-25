@@ -68,5 +68,5 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ event.run_id }}
+          tags: ${{ github.sha }}
           labels: ${{ steps.meta.outputs.labels }}
