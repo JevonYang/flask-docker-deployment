@@ -6,7 +6,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ${{ secrets.DOCKER_REGISTERY }}
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ secrets.DOCKER_REGISTERY }}/${{ github.actor }}/${{ github.repository }}
+  IMAGE_NAME: ${{ secrets.DOCKER_REGISTERY }}/${{ github.repository }}
 
 # Controls when the workflow will run
 on:
