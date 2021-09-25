@@ -30,7 +30,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.7]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -68,5 +68,5 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ event.run_id }}
           labels: ${{ steps.meta.outputs.labels }}
